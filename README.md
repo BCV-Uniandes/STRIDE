@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">Best Student Paper Award at ROAD++: The Second Workshop & Challenge on Event Detection for Situation Awareness in Autonomous Driving. <br>Hosted at the International Conference in Computer Vision (ICCV) 2023<br>[[ArXiV]](https://arxiv.org/abs/2308.13183v1)</p>
+Best Student Paper Award at ROAD++: The Second Workshop & Challenge on Event Detection for Situation Awareness in Autonomous Driving. <br>Hosted at the International Conference in Computer Vision (ICCV) 2023<br>[[ArXiV]](https://arxiv.org/abs/2308.13183v1)
 
 ###
 
@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">Please download our Environmental Feature Detection and Pedestrian Collisions annotations from this [link](https://drive.google.com/drive/folders/1IbnczOSC365H79Q6XU62jo-4t4fDNjKy?usp=sharing). There, you will find the bounding box annotations in COCO Json format, csv with the number of pedestrian collisions associated with each image, and the list of panorama IDs of our selected images. The panoramic images must be downloaded directly from the Google Street View service using the provided list of Panorama IDs. You can either use the [Google Street View app](https://svd360.istreetview.com/) or use this [Google Street View GitHub repository](https://github.com/robolyst/streetview).</p>
+Please download our Environmental Feature Detection and Pedestrian Collisions annotations from this [link](https://drive.google.com/drive/folders/1IbnczOSC365H79Q6XU62jo-4t4fDNjKy?usp=sharing). There, you will find the bounding box annotations in COCO Json format, csv with the number of pedestrian collisions associated with each image, and the list of panorama IDs of our selected images. The panoramic images must be downloaded directly from the Google Street View service using the provided list of Panorama IDs. You can either use the [Google Street View app](https://svd360.istreetview.com/) or use this [Google Street View GitHub repository](https://github.com/robolyst/streetview).
 
 ###
 
