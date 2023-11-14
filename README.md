@@ -21,3 +21,5 @@ Please download our Environmental Feature Detection and Pedestrian Collisions an
 <p align="left">We are still working on the final version of our code and it will be released before November 30.</p>
 
 ###
+
+Feel free to contact n.ayobi@uniandes.edu.co for any questions or information.
