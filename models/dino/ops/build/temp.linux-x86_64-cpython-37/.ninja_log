@@ -1,0 +1,7 @@
+# ninja log v5
+0	2691	1686538230297865188	/data/nayobi/Pedestrians/DINO/models/dino/ops/build/temp.linux-x86_64-cpython-37/data/nayobi/Pedestrians/DINO/models/dino/ops/src/cpu/ms_deform_attn_cpu.o	dec6b9950af3660b
+0	10056	1686538237649763134	/data/nayobi/Pedestrians/DINO/models/dino/ops/build/temp.linux-x86_64-cpython-37/data/nayobi/Pedestrians/DINO/models/dino/ops/src/cuda/ms_deform_attn_cuda.o	d0358818ccfe7037
+0	15377	1686538242969689287	/data/nayobi/Pedestrians/DINO/models/dino/ops/build/temp.linux-x86_64-cpython-37/data/nayobi/Pedestrians/DINO/models/dino/ops/src/vision.o	76e8a8cc40434986
+0	2819	1707335726028184567	/data/nayobi/Pedestrian/STRIDE/models/dino/ops/build/temp.linux-x86_64-cpython-37/data/nayobi/Pedestrian/STRIDE/models/dino/ops/src/cpu/ms_deform_attn_cpu.o	1c77dca55d05e9a
+0	10247	1707335733448081569	/data/nayobi/Pedestrian/STRIDE/models/dino/ops/build/temp.linux-x86_64-cpython-37/data/nayobi/Pedestrian/STRIDE/models/dino/ops/src/cuda/ms_deform_attn_cuda.o	a4c80ed03cbabf91
+1	17335	1707335740535983179	/data/nayobi/Pedestrian/STRIDE/models/dino/ops/build/temp.linux-x86_64-cpython-37/data/nayobi/Pedestrian/STRIDE/models/dino/ops/src/vision.o	730f4b8f4912096f
