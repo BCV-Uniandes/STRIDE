@@ -27,7 +27,7 @@ $ wget -r http://157.253.243.19/STRIDE/
 ```
 You can also download the data from this [Google Drive](https://drive.google.com/drive/folders/1IbnczOSC365H79Q6XU62jo-4t4fDNjKy?usp=sharing). There, you will find the bounding box annotations in COCO JSON format, a CSV with the number of pedestrian collisions associated with each image, and the list of panorama IDs of our selected images. The panoramic images must be downloaded directly from the Google Street View service using the provided list of Panorama IDs. We will soon upload an example code to download the images; in the meanwhile, please use the [Google Street View app](https://svd360.istreetview.com/) or use this [Google Street View GitHub repository](https://github.com/robolyst/streetview). Please remember that we modified the original Google Street View panoramic images by removing 1328 pixels from the top and the bottom (center crop of height 4000) to remove artifacts from panoramic image formation.
 
-### STRIDE Baseline 
+## STRIDE Baseline 
 
 <div align="center">
   <img src="images/STRIDE_baseline.png"/>
