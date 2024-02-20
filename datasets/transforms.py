@@ -286,7 +286,7 @@ class Compose(object):
         format_string += "\n)"
         return format_string
 
-# Remove 1328 pixels from the top and the bottom to remove outliers
+# Remove 1328 pixels from the top and the bottom to remove artifacts from panoramic image formation
 class ArtifactRemoval(object):
     def __init__(self,):
         self.max_y_size = 4000

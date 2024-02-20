@@ -548,13 +548,19 @@ def get_aux_target_hacks_list(image_set, args):
 
 
 def build(image_set, args):
-    root = Path(args.coco_path)
     
-    
-    PATHS = {
-        "train": (root / "images" , root / "annotations" / f"{args.train_fold}_objects_accidents.json"),
-        "val": (root / "images" , root / "annotations" / f"{args.test_fold}_objects_accidents.json"),
-    }
+    if args.demo:
+        root = Path(args.demo_images_path)
+        PATHS = {
+            "train": (root , root / "temp_json.json"),
+            "val": (root , root / "temp_json.json"),
+        }
+    else:
+        root = Path(args.coco_path)
+        PATHS = {
+            "train": (root / "images" , root / "annotations" / f"{args.train_fold}_objects_accidents.json"),
+            "val": (root / "images" , root / "annotations" / f"{args.test_fold}_objects_accidents.json"),
+        }
 
     # add some hooks to datasets
     aux_target_hacks_list = get_aux_target_hacks_list(image_set, args)

@@ -80,6 +80,8 @@ def get_args_parser():
 
     parser.add_argument('--save_results', action='store_true')
     parser.add_argument('--save_log', action='store_true')
+    parser.add_argument('--demo', action='store_true')
+    parser.add_argument('--demo_images_path', type=str)
 
     # distributed training parameters
     parser.add_argument('--world_size', default=1, type=int,
@@ -117,6 +119,20 @@ def main(args):
         with open(save_json_path, 'w') as f:
             json.dump(vars(args), f, indent=2)
     cfg_dict = cfg._cfg_dict.to_dict()
+    if args.demo:
+        args.eval = True
+        image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp']
+        images = os.listdir(args.demo_images_path)
+        images = [file for file in images if os.path.splitext(file)[1].lower() in image_extensions]
+        # 'categories': [{'name': str(i), 'id': i+1, 'supercategory': 'demo_category'} for i in range(27)]
+        images_json = { 'images': [], 'annotations': []}
+        for im_id, img in enumerate(images):
+            images_json['images'].append({'id': im_id, 
+                                          'file_name': img,
+                                          'width': 13312,
+                                          'height': 4000})
+        with open(os.path.join(args.demo_images_path,'temp_json.json'), 'w') as f:
+            json.dump(images_json, f)
     args_vars = vars(args)
     for k,v in cfg_dict.items():
         if k not in args_vars:

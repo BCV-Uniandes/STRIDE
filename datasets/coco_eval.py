@@ -42,6 +42,7 @@ class CocoEvaluator(object):
     def save_coco_json(self, output_dir):
         with open(os.path.join(output_dir,'coco_instances_results.json'), 'w') as f:
             json.dump(self.all_preds, f)
+        torch.save(self.all_preds,os.path.join(output_dir,'coco_instances_results.pth'))
 
     def update(self, predictions):
         img_ids = list(np.unique(list(predictions.keys())))
