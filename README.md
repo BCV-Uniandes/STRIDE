@@ -7,7 +7,7 @@ ICCVW 2023
 <font size="1"><sup>*</sup>Co-Main Authors, Equal contribution.</font><br/>
 
 - **Best Student Paper** Award at the **ROAD++ Workshop of Situation Awareness in Autonomous Driving**. <br>Hosted at the **International Conference in Computer Vision (ICCV) 2023**. **Proceedings** available at [**IEEE Xplore**](https://ieeexplore.ieee.org/document/10350902)<br/>
-- **Preprint** available at [**arXiv**](https://arxiv.org/abs/2401.11174)<br/>
+- **Preprint** available at [**arXiv**](https://arxiv.org/abs/2308.13183v1)<br/>
 
 
 <div align="center">
