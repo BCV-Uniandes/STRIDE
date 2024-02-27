@@ -17,6 +17,7 @@ args = parser.parse_args()
 SAVE_PATH = args.images_save_path
 TYPICAL_WIDTH = 13312
 TYPICAL_HEIGHT = 6656
+CROP_HEIGHT_INDEX = 1000
 POST_HEIGHT = 4000
 
 assert args.num_processes>=0, f'The inputed number of precesses ({args.num_processes}) must be a positive number'
@@ -72,7 +73,7 @@ def download_panoramas(panorama_file_line: str):
     else:
         # Remove 1328 pixels from the top and the bottom to remove artifacts from panoramic image formation
         assert height== TYPICAL_HEIGHT, height
-        image = image.crop(box=(0, (TYPICAL_HEIGHT-POST_HEIGHT)//2, width, height - ((TYPICAL_HEIGHT-POST_HEIGHT)//2)))
+        image = image.crop(box=(0, CROP_HEIGHT_INDEX, width, POST_HEIGHT))
         image.save(os.path.join(SAVE_PATH, image_name + '.jpg'), "jpeg")
 
 with open(args.ids_file_path, 'r') as f:

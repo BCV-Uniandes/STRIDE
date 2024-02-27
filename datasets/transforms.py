@@ -291,13 +291,13 @@ class ArtifactRemoval(object):
     def __init__(self,):
         self.max_y_size = 4000
         self.extra_size = 6656
-        self.half_dif = (6656-4000)//2
+        self.crop_index = 1000
     
     def __call__(self, img, target):
         image_width, image_height = img.size
         if image_height>4000:
             assert image_height== self.extra_size, image_height
             
-            return F.crop(img, self.half_dif-1, 0, self.max_y_size, image_width), target
+            return F.crop(img,  self.crop_index, 0, self.max_y_size, image_width), target
         else:
             return img, target
