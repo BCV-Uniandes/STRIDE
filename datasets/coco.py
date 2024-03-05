@@ -448,7 +448,7 @@ class ConvertCocoPolysToMask(object):
         target["orig_size"] = torch.as_tensor([int(h), int(w)])
         target["size"] = torch.as_tensor([int(h), int(w)])
 
-        if all('accidents' in obj for obj in anno):
+        if len(anno) and all('accidents' in obj for obj in anno):
             assert all(obj['latitude']==anno[0]['latitude'] for obj in anno)
             assert all(obj['longitude']==anno[0]['longitude'] for obj in anno)
             assert all(obj['accidents']==anno[0]['accidents'] for obj in anno)

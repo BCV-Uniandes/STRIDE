@@ -2,3 +2,4 @@ data
 pretrained_models
 outputs
 scripts/STRIDE_eval_dist_tests.sh
+__pycache__
