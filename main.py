@@ -114,7 +114,7 @@ def main(args):
         images = os.listdir(args.demo_images_path)
         images = [file for file in images if os.path.splitext(file)[1].lower() in image_extensions]
         # 'categories': [{'name': str(i), 'id': i+1, 'supercategory': 'demo_category'} for i in range(27)]
-        images_json = { 'images': [], 'annotations': []}
+        images_json = {'categories': [{'name': str(i), 'id': i+1, 'supercategory': 'demo_category'} for i in range(27)], 'images': [], 'annotations': []}
         for im_id, img in enumerate(images):
             images_json['images'].append({'id': im_id, 
                                           'file_name': img,
