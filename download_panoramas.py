@@ -31,7 +31,7 @@ def download_panoramas(panorama_file_line: str):
     image_name = '_'.join([panorama_id,latitude,longitude,year])
 
     if np.sum(np.array(image))==0:
-        print(f'Could nto get image {image_name}, a txt file with its name will be stored instead.')
+        print(f'Could not get image {image_name}, a txt file with its name will be stored instead.')
         with open(os.path.join(SAVE_PATH, image_name + '.txt'), 'w') as tx:
             tx.write(panorama_file_line)
         return
