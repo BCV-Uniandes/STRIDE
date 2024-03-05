@@ -43,17 +43,6 @@ def get_args_parser():
     parser.add_argument('--resize', default=False, action='store_true')
     parser.add_argument('--scales_mult', default=4, type=int)
     parser.add_argument('--num_scales', default=4, type=int)
-    # parser.add_argument('--regression', default=False, action='store_true')
-    # parser.add_argument('--reg_encoder', default=False, action='store_true')
-    # parser.add_argument('--freeze', default=False, action='store_true')
-    # parser.add_argument('--backbone_reg', default=False, action='store_true')
-    # parser.add_argument('--backbone_out', default=False, action='store_true')
-    # parser.add_argument('--reg_cls_token', default=False, action='store_true')
-    # parser.add_argument('--reg_loss', type=str, default='l2', choices=['l2','wse','both'])
-    # parser.add_argument('--no_loss_norm',default=False, action='store_true')
-    # parser.add_argument('--norm_funct', type=str, default='min_max')
-    # parser.add_argument('--just_backbone', default=False, action='store_true')
-    # parser.add_argument('--denoise', default=False, action='store_true')
 
     # training parameters
     parser.add_argument('--output_dir', default='',
