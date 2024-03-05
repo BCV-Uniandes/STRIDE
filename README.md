@@ -31,7 +31,7 @@ You can also download the data from this [Google Drive](https://drive.google.com
 $ pip install streetview
 
 $ python download_panoramas.py --ids_file_path path/to/Panorama_IDs/file --images_save_path path/to/output/directory \
-  --num_processes <number of parallel jobs (according to your internet and cpu resources) --percentage <percentage of the data to download [0.0 - 1.0]> \
+  --num_processes <number of parallel jobs (according to your internet and cpu resources)> --percentage <percentage of the data to download [0.0 - 1.0]> \
   --dont_preprocess (avoid removing top and bottom artifacts)
 ```
 
