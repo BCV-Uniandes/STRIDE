@@ -35,7 +35,9 @@ $ python download_panoramas.py --ids_file_path path/to/Panorama_IDs/file --image
   --dont_preprocess (avoid removing top and bottom artifacts)
 ```
 
-You may also use the [Google Street View app](https://svd360.istreetview.com/) or use this [Google Street View GitHub repository](https://github.com/robolyst/streetview). Please remember that we modified the original Google Street View panoramic images by removing 1000 pixels from the top and 1656 pixels from the bottom to remove artifacts from panoramic image formation.
+You may also use the [Google Street View app](https://svd360.istreetview.com/) or use this [Google Street View GitHub repository](https://github.com/robolyst/streetview). Please remember that we modified the original Google Street View panoramic images by removing 1000 pixels from the top and 1656 pixels from the bottom to remove artifacts from panoramic image formation, just as you can see in the ```download_images.py``` script.
+
+**If you encounter difficulties downloading the data, such as images that are unavailable for download in Google Streetview or similar, feel free to email n.ayobi@uniandes.edu.co and ask for the dataset.**
 
 ## STRIDE Baseline 
 
