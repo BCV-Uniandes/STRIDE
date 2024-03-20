@@ -286,18 +286,27 @@ class Compose(object):
         format_string += "\n)"
         return format_string
 
-# Remove 1328 pixels from the top and the bottom to remove artifacts from panoramic image formation
+# Remove 1000 pixels from the top and 1760 from the bottom to remove artifacts from panoramic image formation
 class ArtifactRemoval(object):
     def __init__(self,):
-        self.max_y_size = 4000
-        self.extra_size = 6656
+        self.final_crop_height = 4000
+        self.typical_height = 6656
+        self.typical_width = 13312
         self.crop_index = 1000
     
-    def __call__(self, img, target):
+    def __call__(self, img):
         image_width, image_height = img.size
-        if image_height>4000:
-            assert image_height== self.extra_size, image_height
+        
+        # Some images have blank spaces when diractly downloaded from the streetview library
+        if image_width>self.typical_width:
+            img = F.crop(img, 0, 0, self.typical_width, image_height)
+            image_width, image_height = img.size
+        if image_height>self.typical_height:
+            img = F.crop(img, 0, 0, image_width, self.typical_height)
+            image_width, image_height = img.size
             
-            return F.crop(img,  self.crop_index, 0, self.max_y_size, image_width), target
+        if image_height>4000:
+            assert image_height== self.typical_height, image_height
+            return F.crop(img,  self.crop_index, 0, self.final_crop_height, image_width)
         else:
-            return img, target
+            return img

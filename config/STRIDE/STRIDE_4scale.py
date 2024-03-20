@@ -86,6 +86,13 @@ interm_loss_coef = 1.0
 no_interm_box_loss = False
 focal_alpha = 0.25
 
+# Panoramic images handling
+img_size = 1800
+resize = False
+scales_mult = 4
+num_scales = 3
+fix_size=False
+
 decoder_sa_type = 'sa' # ['sa', 'ca_label', 'ca_content']
 matcher_type = 'HungarianMatcher' # or SimpleMinsumMatcher
 decoder_module_seq = ['sa', 'ca', 'ffn']
@@ -99,8 +106,11 @@ use_dn = True
 dn_number = 100
 dn_box_noise_scale = 1.0
 dn_label_noise_ratio = 0.5
+dn_label_coef = 1.0
+dn_bbox_coef = 1.0
 embed_init_tgt = True
 dn_labelbook_size = 28
+dn_scalar = 100
 
 match_unstable_error = True
 

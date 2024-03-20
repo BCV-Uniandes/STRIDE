@@ -38,18 +38,13 @@ def get_args_parser():
     parser.add_argument('--coco_path', type=str, default='/comp_robot/cv_public_dataset/COCO2017/')
     parser.add_argument('--coco_panoptic_path', type=str)
     parser.add_argument('--remove_difficult', action='store_true')
-    parser.add_argument('--fix_size', action='store_true')
-    parser.add_argument('--img_size', default=1800, type=int)
-    parser.add_argument('--resize', default=False, action='store_true')
-    parser.add_argument('--scales_mult', default=4, type=int)
-    parser.add_argument('--num_scales', default=4, type=int)
 
     # training parameters
     parser.add_argument('--output_dir', default='',
                         help='path where to save, empty for no saving')
-    parser.add_argument('--train_fold', default="fold1", type=str, choices=["fold1","fold2"],
+    parser.add_argument('--train_fold', default="fold1", type=str, choices=["fold1","fold2","train"],
                         help='Training fold')
-    parser.add_argument('--test_fold', default="test", type=str, choices=["fold1","fold2","test"],
+    parser.add_argument('--test_fold', default="test", type=str, choices=["fold1","fold2","train","test"],
                         help='Test fold')
     parser.add_argument('--note', default='',
                         help='add some notes to the experiment')
@@ -327,7 +322,7 @@ def main(args):
                 utils.save_on_master(weights, checkpoint_path)
                 
         # eval
-        if epoch%2==0:
+        if epoch%2==0 or epoch==args.epochs-1:
             test_stats, coco_evaluator = evaluate(
                 model, criterion, postprocessors, data_loader_val, base_ds, device, args.output_dir,
                 wo_class_error=wo_class_error, args=args, logger=(logger if args.save_log else None)
