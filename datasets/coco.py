@@ -468,14 +468,19 @@ def make_coco_transforms(image_set, fix_size=False, strong_aug=False, args=None)
     ])
 
     scales = [384, 416, 448, 480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800]
+    rescales = [int(args.img_size*0.6510), int(args.img_size*0.6875), int(args.img_size*0.83333)] + [args.img_size]*3
+    ratio = args.img_size/4000
 
     if image_set == 'train':
-        
-
         return T.Compose([
-            T.ArtifactRemoval(),
             T.RandomHorizontalFlip(),
-            T.RandomResize([1800]),
+            T.RandomSelect(
+                T.RandomResize(rescales),
+                T.Compose([
+                    T.RandomResize([scale*args.scales_mult for scale in scales[args.num_scales:]]),
+                    T.RandomCrop((args.img_size, int(13312*ratio))),
+                ])
+            ),
             normalize,
         ])
 
