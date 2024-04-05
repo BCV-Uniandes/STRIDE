@@ -299,14 +299,14 @@ class ArtifactRemoval(object):
         
         # Some images have blank spaces when diractly downloaded from the streetview library
         if image_width>self.typical_width:
-            img = F.crop(img, 0, 0, self.typical_width, image_height)
+            img = F.crop(img, 0, 0, image_height, self.typical_width)
             image_width, image_height = img.size
         if image_height>self.typical_height:
-            img = F.crop(img, 0, 0, image_width, self.typical_height)
+            img = F.crop(img, 0, 0, self.typical_height, image_width)
             image_width, image_height = img.size
             
         if image_height>4000:
-            assert image_height== self.typical_height, image_height
+            assert image_height == self.typical_height, image_height
             return F.crop(img,  self.crop_index, 0, self.final_crop_height, image_width)
         else:
             return img

@@ -126,7 +126,7 @@ def demo(args):
         
     if os.path.isdir(os.path.join(args.output_dir,'Inferences')):
         infered_images = set(im.replace('.pth','.jpg') for im in os.listdir(os.path.join(args.output_dir,'Inferences')))
-        images_list = [im for im in images_list if im not in infered_images]
+        images_list = [im.strip() for im in images_list if im.strip() not in infered_images]
     else:
         os.makedirs(os.path.join(args.output_dir,'Inferences'), exist_ok=True)
         

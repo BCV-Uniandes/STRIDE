@@ -39,7 +39,7 @@ class AzureDetection(torch.utils.data.Dataset):
         self.images_list = open(args.azure_list_path,'r').readlines()
         if os.path.isdir(os.path.join(args.output_dir,'Inferences')):
             infered_images = set(im.replace('.pth','.jpg') for im in os.listdir(os.path.join(args.output_dir,'Inferences')))
-            self.images_list = [im for im in self.images_list if im not in infered_images]
+            self.images_list = [im.strip() for im in self.images_list if im.strip() not in infered_images]
     
     def __len__(self):
         return len(self.images_list)

@@ -10,3 +10,4 @@ termcolor
 addict
 yapf
 timm
+azure-storage-blob
