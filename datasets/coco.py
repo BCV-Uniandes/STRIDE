@@ -326,6 +326,7 @@ class CocoDetection(torchvision.datasets.CocoDetection):
         self._transforms = transforms
         self.prepare = ConvertCocoPolysToMask(return_masks)
         self.aux_target_hacks = aux_target_hacks
+        self.artifict_removal = T.ArtifactRemoval()
 
     def change_hack_attr(self, hackclassname, attrkv_dict):
         target_class = dataset_hook_register[hackclassname]
@@ -354,6 +355,8 @@ class CocoDetection(torchvision.datasets.CocoDetection):
             print("Error idx: {}".format(idx))
             idx += 1
             img, target = super(CocoDetection, self).__getitem__(idx)
+            
+        img = self.artifict_removal(img)
         # breakpoint()  
         image_id = self.ids[idx]
         target = {'image_id': image_id, 'annotations': target}
@@ -460,7 +463,7 @@ class ConvertCocoPolysToMask(object):
         return image, target
 
 
-def make_coco_transforms(image_set, fix_size=False, strong_aug=False, args=None):
+def make_coco_transforms(image_set, args=None):
 
     normalize = T.Compose([
         T.ToTensor(),
@@ -484,9 +487,8 @@ def make_coco_transforms(image_set, fix_size=False, strong_aug=False, args=None)
             normalize,
         ])
 
-    if image_set == 'val':
+    if image_set in ['val','demo']:
         return T.Compose([
-            T.ArtifactRemoval(),
             T.RandomResize([args.img_size]),
             normalize,
         ])
@@ -555,10 +557,9 @@ def get_aux_target_hacks_list(image_set, args):
 def build(image_set, args):
     
     if args.demo:
-        root = Path(args.demo_images_path)
+        root = Path(args.output_dir)
         PATHS = {
-            "train": (root , root / "temp_json.json"),
-            "val": (root , root / "temp_json.json"),
+            "demo": (Path(args.demo_images_path) , root / "temp_json.json")
         }
     else:
         root = Path(args.coco_path)
@@ -580,7 +581,7 @@ def build(image_set, args):
     except:
         strong_aug = False
     dataset = CocoDetection(img_folder, ann_file, 
-            transforms=make_coco_transforms(image_set, fix_size=args.fix_size, strong_aug=strong_aug, args=args), 
+            transforms=make_coco_transforms(image_set, args=args), 
             return_masks=args.masks,
             aux_target_hacks=aux_target_hacks_list,
         )
