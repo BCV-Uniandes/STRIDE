@@ -30,7 +30,7 @@ class AzureDetection(torch.utils.data.Dataset):
         super(AzureDetection, self).__init__()
         self._transforms = transforms
         self.prepare = ConvertCocoPolysToMask()
-        self.blob_service_client = BlobServiceClient(account_url=args.connection_string)
+        self.blob_service_client = BlobServiceClient(account_url=args.account_url, credential=args.credential)
         self.container_name = args.container_name
         self.artifict_removal = T.ArtifactRemoval()
         self.load_images(args)

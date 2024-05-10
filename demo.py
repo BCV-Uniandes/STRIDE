@@ -29,24 +29,22 @@ def get_args_parser():
                         help='override some settings in the used config, the key-value pair '
                         'in xxx=yyy format will be merged into config file.')
     parser.add_argument('--azure_download', action='store_true', help='Download images from azure')
-    parser.add_argument('--connection_string', type=str, help='Connection string to azure blob storage')
+    parser.add_argument('--account_url', type=str, help='Account URL to azure blob storage')
+    parser.add_argument('--credential', type=str, help='SAS token to azure blob storage')
     parser.add_argument('--container_name', type=str, help='Name of he container with the images')
     parser.add_argument('--azure_list_path', type=str, help='Path to txt with list of images to download')
     parser.add_argument('--demo_images_path', type=str, help='Path to downloaded images')
     parser.add_argument('--pretrain_model', type=str, help='Path to pretrained model')
     parser.add_argument('--output_dir', type=str, help='Path to output directory')
-    parser.add_argument('--device', default='cuda',
-                            help='device to use for training / testing')
+    parser.add_argument('--device', default='cuda', help='device to use for training / testing')
     parser.add_argument('--seed', default=42, type=int)
     parser.add_argument('--num_workers', default=10, type=int)
     
     # Distributed params
     parser.add_argument('--find_unused_params', action='store_true')
-    parser.add_argument('--world_size', default=1, type=int,
-                        help='number of distributed processes')
+    parser.add_argument('--world_size', default=1, type=int, help='number of distributed processes')
     parser.add_argument('--dist_url', default='env://', help='url used to set up distributed training')
-    parser.add_argument('--rank', default=0, type=int,
-                        help='number of distributed processes')
+    parser.add_argument('--rank', default=0, type=int, help='number of distributed processes')
     parser.add_argument("--local_rank", type=int, help='local rank for DistributedDataParallel')
 
     return parser
