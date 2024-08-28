@@ -1,0 +1,27 @@
+Traffic sign
+Traffic light
+Crossing sign
+Pedestrian light
+Stop sign
+Yield sign
+School zone sign
+Sidewalk
+Crosswalk
+Lane marking
+Bike lane
+Bus lane
+Roundabout
+Curb
+Bollards
+Median
+Median barrier
+Speed bump
+Trees
+Bus stop
+Street lights
+Kiosks
+Parked vehicles
+Sidewalk obstruction
+Parking lane
+BRT station
+Potholes

@@ -11,3 +11,8 @@ addict
 yapf
 timm
 azure-storage-blob
+streetview
+haversine
+geopandas
+contextily
+tqdm

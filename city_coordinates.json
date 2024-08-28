@@ -1,0 +1,58 @@
+{
+    "bogota": {
+        "latitude":{
+            "min": 4.592401,
+            "max": 4.710260
+        },
+        "longitude":{
+            "min": -74.140897,
+            "max": -74.067469
+        },
+        "bounds": {
+            "minx": -8265000,
+            "maxx": -8240000,
+            "miny": 510000,
+            "maxy": 532000
+        },
+        "seed": 0
+        
+    },
+
+    "sao paulo": {
+        "latitude":{
+            "min": -23.661593,
+            "max": -23.468988
+        },
+        "longitude":{
+            "min": -46.751561,
+            "max": -46.480828
+        },
+        "bounds": {
+            "minx": -5210000,
+            "maxx": -5170000,
+            "miny": -2730000,
+            "maxy": -2680000
+        },
+        "seed": 10
+        
+    },
+
+    "philadelphia": {
+        "latitude":{
+            "min": 4.592401,
+            "max": 4.710260
+        },
+        "longitude":{
+            "min": -74.140897,
+            "max": -74.067469
+        },
+        "bounds": {
+            "minx": -8265000,
+            "maxx": -8240000,
+            "miny": 510000,
+            "maxy": 532000
+        },
+        "seed": 0
+        
+    }
+}
